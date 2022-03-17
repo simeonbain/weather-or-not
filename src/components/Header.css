@@ -1,0 +1,30 @@
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.0625rem solid var(--color-secondary);
+}
+
+.header__title {
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 1rem;
+}
+
+.header__subtitle {
+  padding-bottom: 0.1em;
+  margin: 0 0.4rem;
+}
+
+.header__subtitle p {
+  line-height: 1em;
+}
+
+.header__items {
+  width: 3.3rem;
+  height: 3.3rem;
+  border-left: 0.0625rem solid var(--color-secondary);
+}
+
+.header__bottom {
+  border-bottom: 0.0625rem solid var(--color-secondary);
+}
