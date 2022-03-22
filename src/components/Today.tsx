@@ -1,4 +1,5 @@
 import { useAppSelector } from '../hooks';
+import { useEffect } from 'react';
 
 import './Today.css';
 import clearDayImg from '../assets/clear-day.svg';
