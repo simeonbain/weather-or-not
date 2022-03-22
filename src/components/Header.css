@@ -15,14 +15,13 @@
   margin: 0 0.4rem;
 }
 
-.header__subtitle p {
-  line-height: 1em;
-}
-
-.header__items {
+.header__items-dropdown {
   width: 3.3rem;
   height: 3.3rem;
-  border-left: 0.0625rem solid var(--color-secondary);
+}
+
+.header__subtitle p {
+  line-height: 1em;
 }
 
 .header__bottom {

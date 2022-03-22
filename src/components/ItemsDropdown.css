@@ -1,1 +1,16 @@
+.items-dropdown__item {
+  position: relative;
+  background-color: var(--color-bg);
+  border-left: 0.0625rem solid var(--color-secondary);
+  border-bottom: 0.0625rem solid var(--color-secondary);
+  width: 3.3rem;
+  height: 3.3rem;
+}
 
+.items-dropdown__selected-item {
+  box-shadow: inset 0 -0.2rem 0 0 var(--color-tertiary);
+}
+
+.items-dropdown__hidden-items {
+  display: none;
+}

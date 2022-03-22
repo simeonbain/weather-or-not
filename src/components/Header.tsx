@@ -1,8 +1,12 @@
+import { useAppSelector } from '../hooks';
+
 import './Header.css';
 import ItemsDropdown from './ItemsDropdown';
 import LocationInput from './LocationInput';
 
 export default function Header() {
+  const itemName = useAppSelector((state) => state.item.name);
+
   return (
     <>
       <div className="header__top">
@@ -11,11 +15,11 @@ export default function Header() {
           <div className="header__subtitle">
             <p>
               to bring <br />
-              your <b>umbrella</b>
+              your <b>{itemName}</b>
             </p>
           </div>
         </div>
-        <div className="header__items">
+        <div className="header__items-dropdown">
           <ItemsDropdown />
         </div>
       </div>
