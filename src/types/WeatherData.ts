@@ -1,4 +1,4 @@
-interface Weather {
+interface WeatherData {
   today: {
     currentTemp?: number;
     minTemp?: number;
@@ -6,7 +6,7 @@ interface Weather {
     conditions?: string;
     isDaytime?: boolean;
   };
-  forecast: Array<{ day: string; temp: number; conditions: string }>;
+  forecast: Array<{ dayName: string; temp: number; conditions: string }>;
 }
 
-export default Weather;
+export default WeatherData;

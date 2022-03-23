@@ -1,7 +1,7 @@
 import appConstants from '../constants/appConstants';
-import Weather from '../types/Weather';
+import WeatherData from '../types/WeatherData';
 
-async function fetchWeatherData(lat: number, lon: number): Promise<Weather> {
+async function fetchWeatherData(lat: number, lon: number): Promise<WeatherData> {
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly,alerts&appid=${appConstants.OPEN_WEATHER_API_KEY}`
   );
@@ -33,7 +33,7 @@ function processWeatherData(data: any) {
     const date = new Date(unixDate * 1000);
 
     return {
-      name: getDayName(date),
+      dayName: getDayName(date),
       temp: Math.round(day.temp.max),
       conditions: day.weather[0].main.toLowerCase()
     };

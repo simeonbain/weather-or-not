@@ -11,8 +11,8 @@ async function fetchLocationData(location: string): Promise<{ lat: number; lon: 
 
   const data = await response.json();
   return {
-    lat: data.lat,
-    lon: data.lon
+    lat: data[0].lat,
+    lon: data[0].lon
   };
 }
 
