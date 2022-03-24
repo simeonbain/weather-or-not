@@ -2,7 +2,7 @@ const itemConstants = {
   UMBRELLA: 'umbrella',
   BEANIE: 'beanie',
   SUNNIES: 'sunnies',
-  SNOWBARD: 'snowboard'
+  SNOWBOARD: 'snowboard'
 };
 
 export default itemConstants;

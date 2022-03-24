@@ -1,4 +1,5 @@
 const conditionsConstants = {
+  ASH: 'ash',
   CLEAR: 'clear',
   CLOUDS: 'clouds',
   DRIZZLE: 'drizzle',

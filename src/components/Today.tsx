@@ -1,8 +1,9 @@
 import { useAppSelector } from '../hooks';
 
 import './Today.css';
-import clearDayImg from '../assets/clear-day.svg';
 import notAvailableImg from '../assets/not-available.svg';
+import ConditionsIcon from './ConditionsIcon';
+import conditionsConstants from '../constants/conditionsConstants';
 
 export default function Today() {
   const itemName = useAppSelector((state) => state.item.name);
@@ -15,7 +16,10 @@ export default function Today() {
     return (
       <div className="today">
         <div className="today__icon">
-          <img src={clearDayImg}></img>
+          <ConditionsIcon
+            conditionsName={todayData.conditions ?? conditionsConstants.NOT_AVAILABLE}
+            isDaytime={todayData.isDaytime ?? true}
+          />
         </div>
         <h2>
           Bring your {itemName} &nbsp; - &nbsp; it's {todayData.currentTemp} &deg;C and{' '}

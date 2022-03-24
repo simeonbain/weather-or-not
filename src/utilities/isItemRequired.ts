@@ -13,7 +13,7 @@ function isItemRequired(itemName: string, temp: number, conditions: string, isDa
       return temp < 18;
     case itemConstants.SUNNIES:
       return conditions === conditionsConstants.CLEAR && isDaytime;
-    case itemConstants.SNOWBARD:
+    case itemConstants.SNOWBOARD:
       return conditions === conditionsConstants.SNOW;
     default:
       return false;

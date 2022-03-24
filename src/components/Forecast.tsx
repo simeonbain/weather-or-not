@@ -2,7 +2,7 @@ import { useAppSelector } from '../hooks';
 
 import './Forecast.css';
 import ItemIcon from './ItemIcon';
-import clearDayImg from '../assets/clear-day.svg';
+import ConditionsIcon from './ConditionsIcon';
 
 export default function Forecast() {
   const itemName = useAppSelector((state) => state.item.name);
@@ -24,7 +24,7 @@ export default function Forecast() {
               <h3>{day.dayName.toUpperCase()}</h3>
               <h2 className="day__temp">{day.temp}&deg;C</h2>
               <div className="day__condition">
-                <img src={clearDayImg}></img>
+                <ConditionsIcon conditionsName={day.conditions} />
               </div>
             </div>
           );

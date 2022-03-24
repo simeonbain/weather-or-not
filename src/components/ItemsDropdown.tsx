@@ -15,7 +15,7 @@ export default function ItemsDropdown() {
     itemConstants.UMBRELLA,
     itemConstants.BEANIE,
     itemConstants.SUNNIES,
-    itemConstants.SNOWBARD
+    itemConstants.SNOWBOARD
   ]);
 
   const handleClick: React.MouseEventHandler<HTMLDivElement> = (event) => {
