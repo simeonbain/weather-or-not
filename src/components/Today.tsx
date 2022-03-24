@@ -1,7 +1,6 @@
 import { useAppSelector } from '../hooks';
 
 import './Today.css';
-import notAvailableImg from '../assets/not-available.svg';
 import ConditionsIcon from './ConditionsIcon';
 import conditionsConstants from '../constants/conditionsConstants';
 import isItemRequired from '../utilities/isItemRequired';
@@ -64,7 +63,7 @@ export default function Today() {
     return (
       <div className="today">
         <div className="today__icon">
-          <img src={notAvailableImg}></img>
+          <ConditionsIcon conditionsName={conditionsConstants.NOT_AVAILABLE} />
         </div>
         <h2 className="today__message--error">Weather data could not be found for that location</h2>
       </div>
