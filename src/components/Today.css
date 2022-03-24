@@ -1,0 +1,42 @@
+.today {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.today__icon {
+  width: 50%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.today__divider {
+  border: 0.03125rem solid var(--color-secondary);
+  width: 70%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.today__minmax {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 65%;
+  gap: 1em;
+}
+
+.today__minmax__max,
+.today__minmax__min {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.today__message--error {
+  color: var(--color-quaternary);
+}

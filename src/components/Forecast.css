@@ -1,0 +1,29 @@
+.day {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  border: 0.0625rem solid var(--color-secondary);
+  height: 3rem;
+}
+
+.day__item--active,
+.day__item--inactive {
+  width: 3.5rem;
+  margin-right: 1rem;
+}
+
+.day__item--inactive {
+  visibility: hidden;
+}
+
+.day__temp {
+  margin-left: auto;
+}
+
+.day__condition {
+  margin-left: 1rem;
+  width: 2.5rem;
+}
