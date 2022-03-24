@@ -4,6 +4,7 @@ import './Today.css';
 import notAvailableImg from '../assets/not-available.svg';
 import ConditionsIcon from './ConditionsIcon';
 import conditionsConstants from '../constants/conditionsConstants';
+import isItemRequired from '../utilities/isItemRequired';
 
 export default function Today() {
   const itemName = useAppSelector((state) => state.item.name);
@@ -11,6 +12,21 @@ export default function Today() {
     state.weather.dataAvailable,
     state.weather.data.today
   ]);
+
+  const getTodayMessage = (
+    itemName: string,
+    currentTemp: number,
+    conditions: string,
+    isDaytime = true
+  ) => {
+    return `${
+      isItemRequired(itemName, currentTemp, conditions, isDaytime)
+        ? "You'll need your"
+        : "You don't need your"
+    } ${itemName} \u00A0 - \u00A0 it's ${currentTemp}\u00b0C ${
+      conditions === conditionsConstants.CLEAR ? 'and' : 'with'
+    } ${conditions} right now`;
+  };
 
   if (weatherDataAvailable) {
     return (
@@ -22,8 +38,14 @@ export default function Today() {
           />
         </div>
         <h2>
-          Bring your {itemName} &nbsp; - &nbsp; it's {todayData.currentTemp} &deg;C and{' '}
-          {todayData.conditions}
+          {todayData.currentTemp && todayData.conditions
+            ? getTodayMessage(
+                itemName,
+                todayData.currentTemp,
+                todayData.conditions,
+                todayData.isDaytime
+              )
+            : ''}
         </h2>
         <div className="today__divider"></div>
         <div className="today__minmax">

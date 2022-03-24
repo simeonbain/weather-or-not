@@ -3,6 +3,7 @@ import { useAppSelector } from '../hooks';
 import './Forecast.css';
 import ItemIcon from './ItemIcon';
 import ConditionsIcon from './ConditionsIcon';
+import isItemRequired from '../utilities/isItemRequired';
 
 export default function Forecast() {
   const itemName = useAppSelector((state) => state.item.name);
@@ -17,7 +18,13 @@ export default function Forecast() {
         {forecastData.map((day) => {
           return (
             <div className="day" key={day.dayName}>
-              <div className="day__item--active">
+              <div
+                className={
+                  isItemRequired(itemName, day.temp, day.conditions)
+                    ? 'day__item--active'
+                    : 'day__item--inactive'
+                }
+              >
                 <ItemIcon itemName={itemName}></ItemIcon>
               </div>
 

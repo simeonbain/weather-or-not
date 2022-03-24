@@ -32,7 +32,6 @@ export default function ConditionsIcon(props: ConditionsIconProps) {
         } else {
           return clearNightImg;
         }
-        break;
       case conditionsConstants.CLOUDS:
         if (isDaytime) {
           return partlyCloudyDayImg;
