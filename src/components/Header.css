@@ -27,3 +27,15 @@
 .header__bottom {
   border-bottom: 0.0625rem solid var(--color-secondary);
 }
+
+@media (min-width: 650px) {
+  .header__items-dropdown {
+    display: flex;
+    width: auto;
+  }
+
+  .header__bottom {
+    max-width: 25rem;
+    border-right: 0.0625rem solid var(--color-secondary);
+  }
+}

@@ -7,7 +7,7 @@
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   text-align: center;
 }
 
@@ -41,8 +41,4 @@
   display: flex;
   align-items: center;
   gap: 0.5em;
-}
-
-.today__message--error {
-  color: var(--color-quaternary);
 }

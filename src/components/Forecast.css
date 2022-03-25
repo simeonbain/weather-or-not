@@ -1,5 +1,14 @@
 .forecast {
+  margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.forecast--error {
+  color: var(--color-quaternary);
+  margin-bottom: 2.8rem;
+  text-align: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .day {

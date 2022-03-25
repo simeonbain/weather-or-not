@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAppDispatch } from '../hooks';
+import { useAppDispatch, useAppSelector } from '../hooks';
 import { changeItem } from '../slices/itemSlice';
 
 import itemConstants from '../constants/itemConstants';
@@ -18,28 +18,38 @@ export default function ItemsDropdown() {
     itemConstants.SNOWBOARD
   ]);
 
+  const item = useAppSelector((state) => state.item.name);
+
   const handleClick: React.MouseEventHandler<HTMLDivElement> = (event) => {
     const selectedItem = event.currentTarget.dataset.item;
+    const isDesktop = window.matchMedia('(min-width: 650px)').matches;
 
-    if (open) {
+    if (isDesktop) {
       if (selectedItem) {
         dispatch(changeItem(selectedItem));
+      }
+      setOpen(false);
+    } else {
+      if (open) {
+        if (selectedItem) {
+          dispatch(changeItem(selectedItem));
+        }
       }
 
       const newItemsArr = itemsArr.slice().sort((item) => {
         return item === selectedItem ? -1 : 1;
       });
       setItemsArr(newItemsArr);
-    }
 
-    setOpen(!open);
+      setOpen(!open);
+    }
   };
 
   return (
     <>
-      {itemsArr.map((itemName, index) => {
+      {itemsArr.map((itemName) => {
         let className = 'items-dropdown__item';
-        if (index === 0) {
+        if (itemName === item) {
           className = className + ' items-dropdown__selected-item';
         } else if (!open) {
           className = className + ' items-dropdown__hidden-items';

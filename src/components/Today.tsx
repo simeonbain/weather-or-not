@@ -71,7 +71,6 @@ export default function Today() {
         <div className="today__icon">
           <ConditionsIcon conditionsName={conditionsConstants.NOT_AVAILABLE} />
         </div>
-        <h2 className="today__message--error">Weather data could not be found for that location</h2>
       </div>
     );
   }
