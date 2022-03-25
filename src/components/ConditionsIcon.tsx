@@ -1,8 +1,10 @@
 import clearDayImg from '../assets/clear-day.svg';
 import clearNightImg from '../assets/clear-night.svg';
 import drizzleImg from '../assets/drizzle.svg';
-import dustImg from '../assets/dust-wind.svg';
-import hazeImg from '../assets/haze.svg';
+import dustDayImg from '../assets/dust-day.svg';
+import dustNightImg from '../assets/dust-night.svg';
+import hazeDayImg from '../assets/haze-day.svg';
+import hazeNightImg from '../assets/haze-night.svg';
 import mistImg from '../assets/mist.svg';
 import partlyCloudyDayImg from '../assets/partly-cloudy-day.svg';
 import partlyCloudyNightImg from '../assets/partly-cloudy-night.svg';
@@ -10,7 +12,8 @@ import rainImg from '../assets/rain.svg';
 import ashImg from '../assets/smoke-particles.svg';
 import smokeImg from '../assets/smoke.svg';
 import snowImg from '../assets/snow.svg';
-import thunderstormImg from '../assets/thunderstorms-rain.svg';
+import thunderstormDayImg from '../assets/thunderstorms-day-rain.svg';
+import thunderstormNightImg from '../assets/thunderstorms-night-rain.svg';
 import tornadoImg from '../assets/tornado.svg';
 import windImg from '../assets/wind.svg';
 import notAvailableImg from '../assets/not-available.svg';
@@ -41,11 +44,19 @@ export default function ConditionsIcon(props: ConditionsIconProps) {
       case conditionsConstants.DRIZZLE:
         return drizzleImg;
       case conditionsConstants.DUST:
-        return dustImg;
+        if (isDaytime) {
+          return dustDayImg;
+        } else {
+          return dustNightImg;
+        }
       case conditionsConstants.FOG:
         return mistImg;
       case conditionsConstants.HAZE:
-        return hazeImg;
+        if (isDaytime) {
+          return hazeDayImg;
+        } else {
+          return hazeNightImg;
+        }
       case conditionsConstants.MIST:
         return mistImg;
       case conditionsConstants.RAIN:
@@ -53,7 +64,11 @@ export default function ConditionsIcon(props: ConditionsIconProps) {
       case conditionsConstants.ASH:
         return ashImg;
       case conditionsConstants.SAND:
-        return dustImg;
+        if (isDaytime) {
+          return dustDayImg;
+        } else {
+          return dustNightImg;
+        }
       case conditionsConstants.SMOKE:
         return smokeImg;
       case conditionsConstants.SNOW:
@@ -61,7 +76,11 @@ export default function ConditionsIcon(props: ConditionsIconProps) {
       case conditionsConstants.SQUALL:
         return windImg;
       case conditionsConstants.THUNDERSTORM:
-        return thunderstormImg;
+        if (isDaytime) {
+          return thunderstormDayImg;
+        } else {
+          return thunderstormNightImg;
+        }
       case conditionsConstants.TORNADO:
         return tornadoImg;
       case conditionsConstants.WIND:
