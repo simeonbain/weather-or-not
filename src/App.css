@@ -3,6 +3,10 @@
   height: 100vh;
 }
 
+.hidden {
+  display: none !important;
+}
+
 @media (min-width: 950px) {
   .main {
     display: flex;
