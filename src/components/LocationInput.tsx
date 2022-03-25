@@ -26,13 +26,17 @@ export default function LocationInput() {
           const weatherData = await fetchWeatherData(locationData.lat, locationData.lon);
           dispatch(setLocationData(locationData));
           dispatch(setWeatherData(weatherData));
+          setInputValue('');
         }
       } catch (e) {
         dispatch(setLocationData(null));
         dispatch(setWeatherData(null));
+        setInputValue('');
         console.log(e);
       }
     })();
+
+    setInputValue('Finding...');
   };
 
   return (
