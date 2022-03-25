@@ -1,6 +1,5 @@
 .forecast {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .forecast--error {
