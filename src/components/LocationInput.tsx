@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAppDispatch } from '../hooks';
 import { setWeatherData } from '../slices/weatherSlice';
+import { setLocationData } from '../slices/locationSlice';
 import fetchLocationData from '../utilities/fetchLocationData';
 import fetchWeatherData from '../utilities/fetchWeatherData';
 
@@ -20,10 +21,14 @@ export default function LocationInput() {
 
     (async () => {
       try {
-        const { lat, lon } = await fetchLocationData(inputValue);
-        const weatherData = await fetchWeatherData(lat, lon);
-        dispatch(setWeatherData(weatherData));
+        const locationData = await fetchLocationData(inputValue);
+        if (locationData.lat && locationData.lon) {
+          const weatherData = await fetchWeatherData(locationData.lat, locationData.lon);
+          dispatch(setLocationData(locationData));
+          dispatch(setWeatherData(weatherData));
+        }
       } catch (e) {
+        dispatch(setLocationData(null));
         dispatch(setWeatherData(null));
         console.log(e);
       }

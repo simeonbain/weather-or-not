@@ -7,9 +7,10 @@ import isItemRequired from '../utilities/isItemRequired';
 
 export default function Today() {
   const itemName = useAppSelector((state) => state.item.name);
-  const [weatherDataAvailable, todayData] = useAppSelector((state) => [
+  const [weatherDataAvailable, todayData, locationData] = useAppSelector((state) => [
     state.weather.dataAvailable,
-    state.weather.data.today
+    state.weather.data.today,
+    state.location.data
   ]);
 
   const getTodayMessage = (
@@ -36,6 +37,11 @@ export default function Today() {
             isDaytime={todayData.isDaytime ?? true}
           />
         </div>
+        <h3 className="today__location">
+          {locationData.name ?? ''}
+          {locationData.state ? `, ${locationData.state}` : ''}
+          {locationData.countryCode ? `, ${locationData.countryCode}` : ''}
+        </h3>
         <h2>
           {todayData.currentTemp && todayData.conditions
             ? getTodayMessage(

@@ -14,7 +14,11 @@
 .today__icon {
   width: 50%;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+}
+
+.today__location {
+  margin-bottom: 1.3rem;
+  color: var(--color-quaternary);
 }
 
 .today__divider {
