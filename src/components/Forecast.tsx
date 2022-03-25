@@ -14,7 +14,7 @@ export default function Forecast() {
 
   if (weatherDataAvailable) {
     return (
-      <>
+      <div className="forecast">
         {forecastData.map((day) => {
           return (
             <div className="day" key={day.dayName}>
@@ -36,7 +36,7 @@ export default function Forecast() {
             </div>
           );
         })}
-      </>
+      </div>
     );
   } else {
     return <></>;

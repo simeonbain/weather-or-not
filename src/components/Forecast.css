@@ -1,3 +1,7 @@
+.forecast {
+  margin-bottom: 2rem;
+}
+
 .day {
   display: flex;
   align-items: center;

@@ -5,6 +5,8 @@
   max-width: 40rem;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -18,8 +20,8 @@
 .today__divider {
   border: 0.03125rem solid var(--color-secondary);
   width: 70%;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
 }
 
 .today__minmax {
