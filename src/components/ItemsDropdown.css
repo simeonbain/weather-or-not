@@ -14,3 +14,13 @@
 .items-dropdown__hidden-items {
   display: none;
 }
+
+@media (min-width: 650px) {
+  .items-dropdown__item {
+    border-bottom: none;
+  }
+
+  .items-dropdown__hidden-items {
+    display: block;
+  }
+}

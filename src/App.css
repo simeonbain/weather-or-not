@@ -1,0 +1,35 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (min-width: 950px) {
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+  }
+
+  .main__today,
+  .main__forecast {
+    width: 40%;
+    max-height: 100%;
+  }
+
+  .main__divider {
+    border: 0.03125rem solid var(--color-secondary);
+    height: 70%;
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+  }
+}
