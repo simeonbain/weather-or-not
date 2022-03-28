@@ -33,8 +33,8 @@ Limitations:
 ## Technologies
 
 - React
-- Redux (React-Reduc, Redux Toolkit)
-- Typescript
+- Redux (React-Redux, Redux Toolkit)
+- TypeScript
 - Vite
 
 ## Third-party APIs
