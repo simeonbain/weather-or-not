@@ -43,7 +43,7 @@ export default function Today() {
           {locationData.countryCode ? `, ${locationData.countryCode}` : ''}
         </h3>
         <h2>
-          {todayData.currentTemp && todayData.conditions
+          {todayData.currentTemp !== undefined && todayData.conditions
             ? getTodayMessage(
                 itemName,
                 todayData.currentTemp,
