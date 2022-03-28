@@ -20,7 +20,7 @@ export default function ItemsDropdown() {
 
   const item = useAppSelector((state) => state.item.name);
 
-  const handleClick: React.MouseEventHandler<HTMLDivElement> = (event) => {
+  const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     const selectedItem = event.currentTarget.dataset.item;
     const isDesktop = window.matchMedia('(min-width: 650px)').matches;
 
