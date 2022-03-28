@@ -37,9 +37,10 @@ Limitations:
 - TypeScript
 - Vite
 
-## Third-party APIs
+## Third-party Resources
 
-- Open Weather Map: GeoCode and OneCall APIs
+- [Open Weather Map](https://openweathermap.org): GeoCode and OneCall APIs
+- [Basmilius Weather Icons](https://github.com/basmilius/weather-icons)
 
 ## Motivation
 
