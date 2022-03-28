@@ -93,7 +93,9 @@ export default function ConditionsIcon(props: ConditionsIconProps) {
   return (
     <>
       <img
-        src={isDaytime ? getImage(conditionsName, isDaytime) : getImage(conditionsName)}
+        src={
+          isDaytime !== undefined ? getImage(conditionsName, isDaytime) : getImage(conditionsName)
+        }
         alt={conditionsName}
       ></img>
     </>
