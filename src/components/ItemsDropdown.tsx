@@ -20,7 +20,7 @@ export default function ItemsDropdown() {
 
   const item = useAppSelector((state) => state.item.name);
 
-  const handleClick: React.MouseEventHandler<HTMLDivElement> = (event) => {
+  const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     const selectedItem = event.currentTarget.dataset.item;
     const isDesktop = window.matchMedia('(min-width: 650px)').matches;
 
@@ -55,9 +55,9 @@ export default function ItemsDropdown() {
           className = className + ' items-dropdown__hidden-items';
         }
         return (
-          <div className={className} key={itemName} data-item={itemName} onClick={handleClick}>
+          <button className={className} key={itemName} data-item={itemName} onClick={handleClick}>
             <ItemIcon itemName={itemName} />
-          </div>
+          </button>
         );
       })}
     </>

@@ -21,10 +21,11 @@ export default function LocationInput() {
 
   const handleSubmit: React.MouseEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
+    const tempInputValue = inputValue;
 
     (async () => {
       try {
-        const locationData = await fetchLocationData(inputValue);
+        const locationData = await fetchLocationData(tempInputValue);
         if (locationData.lat && locationData.lon) {
           const weatherData = await fetchWeatherData(locationData.lat, locationData.lon);
           dispatch(setLocationData(locationData));
@@ -32,12 +33,12 @@ export default function LocationInput() {
           if (isAppInStartup) {
             dispatch(setStartup(false));
           }
-          setInputValue('');
+          setInputValue(tempInputValue);
         }
       } catch (e) {
         dispatch(setLocationData(null));
         dispatch(setWeatherData(null));
-        setInputValue('');
+        setInputValue(tempInputValue);
         console.log(e);
       }
     })();
