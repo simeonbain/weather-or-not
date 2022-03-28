@@ -55,9 +55,9 @@ export default function ItemsDropdown() {
           className = className + ' items-dropdown__hidden-items';
         }
         return (
-          <div className={className} key={itemName} data-item={itemName} onClick={handleClick}>
+          <button className={className} key={itemName} data-item={itemName} onClick={handleClick}>
             <ItemIcon itemName={itemName} />
-          </div>
+          </button>
         );
       })}
     </>

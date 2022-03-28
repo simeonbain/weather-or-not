@@ -25,7 +25,7 @@ function processWeatherData(data: any) {
     maxTemp: Math.round(data.daily[0].temp.max),
     minTemp: Math.round(data.daily[0].temp.min),
     conditions: data.current.weather[0].main.toLowerCase(),
-    isDay: data.current.dt > data.current.sunrise && data.current.dt < data.current.sunset
+    isDaytime: data.current.dt > data.current.sunrise && data.current.dt < data.current.sunset
   };
 
   const forecast = data.daily.map((day: any) => {
